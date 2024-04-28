@@ -2,7 +2,7 @@ import React from 'react'
 
 const Language = () => {
   return (
-    <div>Language</div>
+    <div className='pt-16 md:pt-0'>Language</div>
   )
 }
 

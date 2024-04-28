@@ -2,7 +2,7 @@ import React from 'react'
 
 const SeoMetadata = () => {
   return (
-    <div>SeoMetadata</div>
+    <div className='pt-16 md:pt-0'>SeoMetadata</div>
   )
 }
 

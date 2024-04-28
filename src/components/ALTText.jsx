@@ -2,7 +2,7 @@ import React from 'react'
 
 const ALTText = () => {
   return (
-    <div>ALTText</div>
+    <div className='pt-16 md:pt-0'>ALTText</div>
   )
 }
 

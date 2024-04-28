@@ -2,7 +2,7 @@ import React from 'react'
 
 const Filename = () => {
   return (
-    <div>Filename</div>
+    <div className='pt-16 md:pt-0'>Filename</div>
   )
 }
 

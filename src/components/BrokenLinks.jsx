@@ -2,7 +2,7 @@ import React from 'react'
 
 const BrokenLinks = () => {
   return (
-    <div>BrokenLinks</div>
+    <div className='pt-16 md:pt-0'>BrokenLinks</div>
   )
 }
 

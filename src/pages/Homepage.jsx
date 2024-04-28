@@ -1,4 +1,3 @@
-import { Layout, Page } from '@shopify/polaris'
 import React, { useState } from 'react'
 import Sidebar from '../components/Sidebar'
 import Overview from '../components/Overview'
@@ -8,6 +7,7 @@ import BrokenLinks from '../components/BrokenLinks'
 import SeoMetadata from '../components/SeoMetadata'
 import BillingInfo from '../components/BillingInfo'
 import Language from '../components/Language'
+import Navbar from '../components/Navbar'
 
 const Homepage = () => {
   const [selectedComponent, setSelectedComponent] = useState('Overview');
@@ -32,32 +32,32 @@ const Homepage = () => {
         return null;
     }
   };
+
   return (
-    // <Page>
-    //   <Layout>
-    //     <Layout.Section>
-    //       <Sidebar/>
-    //     </Layout.Section>
-    //     <Layout.Section>
-    //       <div className="p-6">
-    //         <h1>Welcome </h1>
-    //         <p>This is the main content area of the home page.</p>
-    //       </div>
-    //     </Layout.Section>
-    //   </Layout>
-    // </Page>
-
-    <div className="flex h-screen ">
-    {/* Sidebar */}
-    <div className="bg-gray-800 text-white w-64 min-h-screen hidden md:block">
-      <Sidebar onSelect={setSelectedComponent} />
-    </div>
-
-    {/* Main Content */}
-    <div className="flex-1 p-6">
-      {renderComponent()}
-    </div>
-  </div>
+    <>
+      <div className="md:flex h-screen hidden ">
+        {/* Sidebar */}
+        <div className="bg-gray-800 text-white w-64 min-h-screen hidden md:block">
+          <Sidebar onSelect={setSelectedComponent} />
+        </div>
+        {/* Main Content */}
+        <div className="flex-1 p-6">
+          {renderComponent()}
+        </div>
+      </div>
+      
+      {/* mobile */}
+      <div className="block md:hidden">
+        {/* Fixed Navbar */}
+        <div className="fixed top-0 left-0 right-0 bg-gray-800 text-white w-full z-50 h-28 overflow-x-auto text-2xl">
+          <Navbar onSelect={setSelectedComponent} />
+        </div>
+        {/* Main Content */}
+        <div className="mt-20 ">
+          {renderComponent()}
+        </div>
+      </div>
+    </>
   )
 }
 
